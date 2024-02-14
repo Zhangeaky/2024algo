@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /**
  * 使用数组实现栈
+ * 错误原因一: 题目做的少，受到以前做过的题目的影响 搞了一个什么栈顶指针,没有考虑全面栈顶指针为0的情况
  */
 public class StackByArray<E> {
 
@@ -35,9 +36,10 @@ public class StackByArray<E> {
         }
 
         // 这里怎么处理？
-        if (topIndex == 0) {
+        if (topIndex == 1) {
             E popped = data[0];
             data[0] = null;
+            topIndex--;
             return popped;
         }
 
@@ -51,6 +53,7 @@ public class StackByArray<E> {
     }
 
     private boolean isEmpty() {
+        // TODO: 2024/2/14 离了大普 数组的length 没有理解清楚
         return 0 == data.length ;
     }
 
@@ -58,6 +61,12 @@ public class StackByArray<E> {
         StackByArray<String> stack = new StackByArray<>(5);
 
         System.out.println(stack.push("one"));
+        System.out.println(stack.push("two"));
+        System.out.println(stack.push("three"));
+        System.out.println(stack.push("four"));
+
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
         System.out.println(stack.pop());
         System.out.println(stack.pop());
         System.out.println(stack.pop());
