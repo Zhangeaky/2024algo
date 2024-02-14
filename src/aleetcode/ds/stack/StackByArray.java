@@ -36,7 +36,9 @@ public class StackByArray<E> {
 
         // 这里怎么处理？
         if (topIndex == 0) {
-            return data[0];
+            E popped = data[0];
+            data[0] = null;
+            return popped;
         }
 
         E poppedObject = data[topIndex-1];
@@ -55,27 +57,10 @@ public class StackByArray<E> {
     public static void main(String[] args) {
         StackByArray<String> stack = new StackByArray<>(5);
 
-        System.out.println(stack.push("a"));
-        System.out.println(stack.push("b"));
-        System.out.println(stack.push("c"));
-        System.out.println(stack.push("d"));
-        System.out.println(stack.push("e"));
-        System.out.println(stack);
+        System.out.println(stack.push("one"));
         System.out.println(stack.pop());
         System.out.println(stack.pop());
-        stack.push("mike");
         System.out.println(stack.pop());
-
-        System.out.println("===== =====");
-        StackByArray ss = new StackByArray(5);
-        System.out.println(ss.pop());
-        System.out.println(ss.push("liqinag"));
-        System.out.println(ss.pop());
-        System.out.println(ss.pop());
-        System.out.println(ss.pop());
-        System.out.println(ss.pop());
-        System.out.println(ss.pop());
-        System.out.println(ss.pop());
 
 
     }
