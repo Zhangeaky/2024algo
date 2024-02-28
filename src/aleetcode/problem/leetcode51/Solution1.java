@@ -28,6 +28,17 @@ public class Solution1 {
         return resultList;
     }
 
+    private void initChessBoard(List<List<String>> chessBoard, int n) {
+        String row = "";
+        for (int i=0; i<n; i++) {
+            row = row + P;
+        }
+
+        for (int i=0; i<n; i++) {
+            row = row + P;
+        }
+    }
+
 
     // n 常数 deep 从0开始
     private void generate(int n, int deep, List<String> listOfRow, List<List<String>> resultList) {
@@ -47,7 +58,6 @@ public class Solution1 {
             }
         }
         listOfRow.add(element.toString());
-        generate(n, deep++, listOfRow, resultList);
 
     }
 
@@ -137,8 +147,17 @@ public class Solution1 {
         }
 
         public static void main(String[] args) {
-            String ss = "abc";
-            System.out.println(ss.charAt(3));
+
+            List<String> ss = new ArrayList<>();
+            ss.add("---");
+            ss.add("---");
+            ss.add("---");
+
+            String newss = ss.get(0) + "Q";
+            ss.set(0, newss);
+
+
+            System.out.println(ss);
         }
     }
 }
