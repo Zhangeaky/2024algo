@@ -1,51 +1,64 @@
 package aleetcode.problem;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+import java.util.Set;
 
+
+/**
+ * <a href="https://leetcode.cn/problems/permutations/description/?envType=study-plan-v2&envId=top-100-liked">全排列</a>
+ */
 public class leetcode46 {
 
     static class Solution {
 
-        private int length;
+
+        private List<List<Integer>> resultList = new ArrayList<>();
 
 
         public List<List<Integer>> permute(int[] nums) {
 
-            this.length = nums.length;
+            if (nums == null) {
+                return resultList;
+            }
 
 
 
+            generate(new ArrayList<>(), nums);
 
-            return null;
+            return resultList;
         }
 
 
-        private void f(int i, int j) {
+        private void generate(List<Integer> road, int[] given) {
 
-            if (i == length) {
-
+            if (road.size() == given.length) {
+                resultList.add(new ArrayList<>(road));
+                return;
             }
 
+            for (Integer integer : given) {
+                // 做出选择
+                if (!road.contains(integer)) {
+                    road.add(integer);
+                } else {
+                    continue;
+                }
+                // 进入下一层
+                generate(road, given);
+                // 撤销上一次选择
+                road.remove(road.size()-1);
+            }
         }
 
         public static void main(String[] args) {
 
-            List<List<Integer>> result = new ArrayList<>();
+            int[] input = new int[] {1, 2, 3};
 
-            List<Integer> one = new ArrayList<>();
-            one.add(1);
-            one.add(2);
-            one.add(3);
-
-            result.add(one);
-            System.out.println(result);
-            one.remove(2);
-            System.out.println(result);
-
+            Solution solution = new Solution();
+            List<List<Integer>> permute = solution.permute(input);
+            System.out.println(permute);
 
         }
     }
