@@ -21,6 +21,27 @@ public class Solution {
             pre = curr;
             curr = nextNode;
         }
-        return head;
+        return pre;
+    }
+
+    public static void print(ListNode node) {
+        if (node == null) {
+            return;
+        }
+        while (node != null) {
+            System.out.printf("->" + node.val);
+            node = node.next;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+
+        Solution ss = new Solution();
+        print(ss.reverseList(head));
+
     }
 }
