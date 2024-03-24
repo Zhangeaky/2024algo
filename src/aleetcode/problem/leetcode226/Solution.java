@@ -42,4 +42,15 @@ class Solution {
         node.right = node.left;;
         node.left = temp;
     }
+
+    public static void main(String[] args) {
+        TreeNode one = new TreeNode(1);
+        TreeNode two = new TreeNode(2);
+
+        TreeNode temp = one;
+        one = two;
+        two = temp;
+        System.out.printf("");
+
+    }
 }
