@@ -11,15 +11,13 @@ import java.util.List;
  */
 public class Solution20240325 {
 
-    private static final int ORIGIN = 0;
-
     private int target;
 
     private List<List<Integer>> resultList;
 
     public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
 
-        List<List<Integer>> resultList = new ArrayList<>();
+        resultList = new ArrayList<>();
 
         if (root == null) {
             return resultList;
@@ -35,32 +33,37 @@ public class Solution20240325 {
 
     private void dfs(List<Integer> path, TreeNode root) {
 
-        // 递归终止
+        // 递归终止 空节点
         if (root == null) {
-            if (target == sumList(path)) {
-                resultList.add(new ArrayList<>(path));
-            }
             return;
         }
 
+        // 递归终止 椰子节点
+        if (root.right == null & root.left == null) {
+            target-=root.val;
+            path.add(root.val);
+            if (target == 0) {
+                resultList.add(new ArrayList<>(path));
+            }
+            target+=root.val;
+            path.remove(path.size()-1);
+            return;
+        }
+
+        target-=root.val;
         path.add(root.val);
         dfs(path, root.left);
+
         dfs(path, root.right);
         path.remove(path.size()-1);
     }
 
-    private int sumList(List<Integer> input) {
-        if (input.size() == 0) {
-            return 0;
-        }
-        return input.stream().reduce(ORIGIN, Integer::sum);
-    }
+
 
     public static void main(String[] args) {
 
         Solution20240325 ss = new Solution20240325();
         List<Integer> list = Arrays.asList(1,2,3);
-        System.out.println(ss.sumList(list));
 
         List<Integer> ggg = new ArrayList<>(16);
         System.out.println(ggg.size());
