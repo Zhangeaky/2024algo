@@ -2,7 +2,16 @@ package aleetcode.problem.leetcode112;
 
 import aleetcode.problem.leetcode94.TreeNode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Solution20240326 {
+
+    public static void main(String[] args) {
+        List<Integer> aa = new ArrayList<>(200);
+
+        System.out.println(aa.size());
+    }
 
 
     public boolean hasPathSum(TreeNode root, int targetSum) {
