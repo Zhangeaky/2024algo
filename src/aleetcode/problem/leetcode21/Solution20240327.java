@@ -2,6 +2,7 @@ package aleetcode.problem.leetcode21;
 
 import aleetcode.problem.leetCode160.ListNode;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -19,28 +20,28 @@ public class Solution20240327 {
             return list2 == null ? list1 : list2;
         }
 
-        ListNode one = list1;
-        ListNode two = list2;
+        ListNode one = null;
+        ListNode two = null;
+        if (list1.val < list2.val) {
+            one = list1;
+            two = list2;
+        } else {
+            one = list2;
+            two = list1;
+        }
 
-        while (true) {
+        ListNode curr = one;
+
+
+        while (curr != null) {
 
             if (one.val < two.val) {
-
-                ListNode temp = one.next;
-                one.next = two;
-
-
-            } else if (one.val == two.val) {
-
-            } else {
-
+                curr = one;
             }
 
 
         }
 
-
-
-        }
-
+        return null;
+    }
 }
