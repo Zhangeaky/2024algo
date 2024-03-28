@@ -1,9 +1,7 @@
 package aleetcode.problem.leetcode78;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  *  [1, 2, 3, 4]
