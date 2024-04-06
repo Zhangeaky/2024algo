@@ -17,7 +17,10 @@ public class Solution20240406 {
         int n = obstacleGrid[0].length;
 
         int[][] dp = new int[m][n];
-        dp[0][0] = 1;
+
+        // 这里是没有必要的 如果只有一个元素且是障碍物的话就会被这儿干扰 从而得不到答案。
+        // 没有理由默认初始化为1  因为有可能是障碍物
+        // dp[0][0] = 1;
 
         for (int i=1; i<m; i++) {
             if (obstacleGrid[i][0] == 1 || obstacleGrid[i-1][0] == 1) {
@@ -81,6 +84,8 @@ public class Solution20240406 {
 
         int[][] case2 = new int[][]{{0,1},{0,0}};
 
-        System.out.println(ss.uniquePathsWithObstacles(case1));
+        int[][] case3 = new int[][] {{1}};
+
+        System.out.println(ss.uniquePathsWithObstacles(case3));
     }
 }
