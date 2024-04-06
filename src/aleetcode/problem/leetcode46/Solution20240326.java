@@ -33,6 +33,7 @@ public class Solution20240326 {
         //递归终止条件
         if (nums.length == path.size()) {
             resultList.add(new ArrayList<>(path));
+            return;
         }
 
         // 单层递归
@@ -54,7 +55,7 @@ public class Solution20240326 {
 
     public static void main(String[] args) {
         Solution20240326 ss = new Solution20240326();
-        System.out.println(ss.permute(new int[]{1, 2, 3}));
+        System.out.println(ss.permute(new int[]{1, 1, 0}));
     }
 }
 

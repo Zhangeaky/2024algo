@@ -47,7 +47,7 @@ public class Solution20240327 {
 
     public static void main(String[] args) {
         Solution20240327 ss = new Solution20240327();
-        System.out.println(ss.combine(4, 2));
+        System.out.println(ss.combine(4, 4));
     }
 
 

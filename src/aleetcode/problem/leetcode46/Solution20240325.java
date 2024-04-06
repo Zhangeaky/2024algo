@@ -36,12 +36,12 @@ public class Solution20240325 {
             // 没有使用改过则放入path中 并标记使用
             used[i] = true;
             path.add(nums[i]);
-            dfs(index+1, nums, used, path, resultList);
+            dfs(i, nums, used, path, resultList);
 
             // 回撤
-            path.remove(index);
+            path.remove(path.size());
             // 这里回撤是指索引是什么非常关键，是一个理解点。 不知道这里传什么就是没有理解这个算法。
-            used[index] = false;
+            used[i] = false;
         }
     }
 
