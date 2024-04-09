@@ -3,8 +3,16 @@ package aleetcode.algo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class 背包问题 {
+public class ZeroOneBag {
 
+
+    // 使用一维动态数组
+    public int backBagi(int weight, int[] value, int[] weights) {
+        return 0;
+    }
+
+
+        // 使用二维dp数组
     public int backBag(int weight, int[] value, int[] weights) {
 
         if (weight == 0) {
@@ -106,7 +114,7 @@ public class 背包问题 {
 
     public static void main(String[] args) {
 
-        背包问题 背包问题 = new 背包问题();
+        ZeroOneBag 背包问题 = new ZeroOneBag();
         int j = 背包问题.backBag(5, new int[]{15, 20, 30, 90}, new int[]{1, 3, 4, 5});
         System.out.println(j);
 
