@@ -21,8 +21,10 @@ public class Solution20240409OneDemension {
         int[] dp = new int[target+1];
 
         for (int i=0; i<nums.length; i++) {
+            System.out.println();
             for (int j=sum/2;j>=nums[i];j--) {
                 dp[j] = Math.max(dp[j], dp[j - nums[i]] + nums[i]);
+                System.out.print(dp[j] + ",");
             }
         }
 
@@ -35,7 +37,7 @@ public class Solution20240409OneDemension {
         int[] input = {1, 2, 3, 6, 2, 4, 1, 1};
         System.out.println(dd.canPartition(input));
 
-        System.out.println(ss.canPartition(input));
+        //System.out.println(ss.canPartition(input));
     }
 
 
