@@ -7,4 +7,17 @@ public class ListNode {
       val = x;
       next = null;
     }
+    public ListNode(int x, ListNode next) {
+        val = x;
+        this.next = next;
+    }
+
+    public void print() {
+        ListNode curr = this;
+        while (curr!=null) {
+            System.out.print(curr.val + " ");
+            curr = curr.next;
+        }
+        System.out.println("===");
+    }
 }

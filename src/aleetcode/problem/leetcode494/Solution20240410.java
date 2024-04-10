@@ -21,20 +21,13 @@ public class Solution20240410 {
         int weight = (target + sum) / 2;
 
         int[] dp = new int[weight+1];
-
-        int count = 0;
+        dp[0] = 1;
         for (int i=0; i<nums.length; i++) {
             for (int j=weight; j>= nums[i] ; j--) {
-                int origin = dp[j];
-                int newValue = dp[j - nums[i]] + nums[i];
-                if (newValue == weight ) {
-                    count ++;
-                }
-                dp[j] = Math.max(origin, newValue);
+                dp[j] += dp[j-nums[i]];
             }
         }
-        return count;
-
+        return dp[weight];
     }
 
     public static void main(String[] args) {
