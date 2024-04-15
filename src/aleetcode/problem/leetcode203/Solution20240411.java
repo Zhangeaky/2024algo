@@ -19,9 +19,10 @@ public class Solution20240411 {
         while (curr != null) {
             if (curr.val == val) {
                 pre.next = curr.next;
-                curr = curr.next == null ? curr : curr.next;
+                curr = curr.next;
+                continue;
             }
-            pre = curr;
+            pre = pre.next;
             curr = curr.next;
         }
 

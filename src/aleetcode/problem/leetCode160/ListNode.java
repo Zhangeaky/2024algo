@@ -1,6 +1,9 @@
 package aleetcode.problem.leetCode160;
 
 public class ListNode {
+
+    // TODO: 2024/4/14 构建数组链表的gongneng
+
     public int val;
     public ListNode next;
     public ListNode(int x) {
@@ -12,12 +15,20 @@ public class ListNode {
         this.next = next;
     }
 
-    public void print() {
+    public String print() {
         ListNode curr = this;
+        StringBuilder toString = new StringBuilder();
         while (curr!=null) {
-            System.out.print(curr.val + " ");
+            toString.append(curr.val).append(" ");
             curr = curr.next;
         }
-        System.out.println("===");
+        toString.append("===");
+        System.out.println(toString.toString());
+        return toString.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "value:" + val + ";";
     }
 }
