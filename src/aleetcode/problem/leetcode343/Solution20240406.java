@@ -11,7 +11,6 @@ public class Solution20240406 {
         int [] dp = new int[n+1];
         // 0 1 都拆不了，没有任何意义
         dp[2] = 1;
-
         for (int i=3; i<=n; i++) {
             // 这里的j 取成 i/2 很巧秒 比较笨拙的办法是取 j<i
             for (int j=1; j<=i/2; j++) {
