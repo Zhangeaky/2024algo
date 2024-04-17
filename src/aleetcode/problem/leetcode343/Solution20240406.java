@@ -22,6 +22,8 @@ public class Solution20240406 {
 
                 // 说明2: j*dp[i-j], dp[i-j] 表示的数字拆成了至少2个数，j*dp[i-j] 拆成的个数至少为3，dp[i-j]*j就是dp[i] 拆成3个数以上的最大值。
                 dp[i] = Math.max(j*(i-j), Math.max(j*dp[i-j], dp[i]));
+                // 为什么不能写成 Math.max(j*(i-j), Math.max((i-j)*dp[j], dp[i]));
+                // 答: 因为外面的必须是大的那个数。dp[X]是小的数拆分乘积最大值，如果是大的数在里面，外面的数是小的数，其实和拆分的时候就重复了。
             }
         }
 
