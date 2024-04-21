@@ -2,11 +2,9 @@ package aleetcode.problem.leetcode203;
 
 import aleetcode.problem.leetCode160.ListNode;
 
-/**
- * <a href="https://leetcode.cn/problems/remove-linked-list-elements/">移除链表元素</a>
- */
-public class Solution20240411 {
+import java.util.Optional;
 
+public class Solution20240421 {
 
     public ListNode removeElements(ListNode head, int val) {
 
@@ -16,16 +14,16 @@ public class Solution20240411 {
 
         ListNode dummy = new ListNode(-1);
         dummy.next = head;
-        ListNode curr = head;
         ListNode pre = dummy;
+        ListNode curr = head;
 
-        while (curr != null) {
+        while (curr!=null) {
             if (curr.val == val) {
                 pre.next = curr.next;
-                curr = curr.next;
+                curr =curr.next;
                 continue;
             }
-            pre = pre.next;
+            pre = curr;
             curr = curr.next;
         }
 
@@ -33,12 +31,10 @@ public class Solution20240411 {
     }
 
     public static void main(String[] args) {
-
-        ListNode head = new ListNode(1, new ListNode(1, new ListNode(1, new ListNode(1))));
-        head.print();
-        Solution20240411 ss = new Solution20240411();
-        ListNode node = ss.removeElements(head, 1);
-        node.print();
-
+        ListNode transfer = ListNode.transfer(new int[]{7,7,7,7});
+        Solution20240421 ss = new Solution20240421();
+        ListNode node = ss.removeElements(transfer, 7);
+        Optional.ofNullable(node).map(ListNode::print);
     }
+
 }

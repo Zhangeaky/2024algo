@@ -1,5 +1,7 @@
 package aleetcode.algo;
 
+import aleetcode.problem.instrument.SolutionMethod;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,24 +9,26 @@ public class ZeroOneBag {
 
 
     // 使用一维动态数组
+    @SolutionMethod
     public int backBagi(int weight, int[] value, int[] weights) {
         return 0;
     }
 
 
         // 使用二维dp数组
+    @SolutionMethod
     public int backBag(int weight, int[] value, int[] weights) {
-
         if (weight == 0) {
             return 0;
         }
 
+        // dp 数组的含义， 0-i之间的任意选择物品，使得背包重量小于等于j dp[i][j]表示背包的最大价值
         int[][] dp = new int[value.length][weight+1];
 
+        // 初始化dp数组
         for (int i=0; i<value.length; i++) {
             dp[i][0] = 0;
         }
-
         for (int j=0; j<=weight; j++) {
             dp[0][j] = weights[0] <= j ? value[0] : 0;
         }
