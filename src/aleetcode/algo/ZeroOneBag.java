@@ -7,6 +7,16 @@ import java.util.List;
 
 public class ZeroOneBag {
 
+    @SolutionMethod
+    public int practice(int weight, int[] value, int[] weights) {
+
+        //1. 确定dp数组的含义
+
+        return 0;
+    }
+
+
+
 
     // 使用一维动态数组
     @SolutionMethod
