@@ -1,5 +1,7 @@
 package aleetcode.problem.leetcode494;
 
+import aleetcode.problem.instrument.SolutionMethod;
+
 import java.util.Arrays;
 
 /**
@@ -7,6 +9,7 @@ import java.util.Arrays;
  */
 public class Solution20240410 {
 
+    @SolutionMethod
     public int findTargetSumWays(int[] nums, int target) {
 
         if (nums == null || nums.length ==0) {
@@ -23,6 +26,7 @@ public class Solution20240410 {
         int[] dp = new int[weight+1];
         dp[0] = 1;
         for (int i=0; i<nums.length; i++) {
+            // TODO: 2024/5/5 这个循环条件怎么理解 很重要！！！
             for (int j=weight; j>= nums[i] ; j--) {
                 dp[j] += dp[j-nums[i]];
             }
