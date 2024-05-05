@@ -8,7 +8,6 @@ import java.util.Arrays;
  */
 public class Solution20240409 {
 
-
     public boolean canPartition(int[] nums) {
 
         if (nums == null) {
