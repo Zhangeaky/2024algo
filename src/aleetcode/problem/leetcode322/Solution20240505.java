@@ -20,10 +20,12 @@ public class Solution20240505 {
         // TODO: 2024/5/6 这里为什么从1 开始呢？
         for (int j=1; j<=amount; j++) {
             for (int i=0; i<coins.length; i++) {
+                // TODO: 2024/5/6 这里为什么要加一个初始值判断？？ 
                 if (j>=coins[i] && dp[i-coins[j]]!=Integer.MAX_VALUE) {
                     dp[j] = Math.min(dp[j], dp[j-coins[i]]+1);
                 }
             }
+
         }
         if (dp[amount] == Integer.MAX_VALUE) {
             return -1;
