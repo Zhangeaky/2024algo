@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ZeroOneBag {
 
-    @SolutionMethod
+    @SolutionMethod("01")
     public int practice(int weight, int[] value, int[] weights) {
 
         //1. 确定dp数组的含义

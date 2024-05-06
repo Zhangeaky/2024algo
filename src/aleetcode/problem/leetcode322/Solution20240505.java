@@ -17,18 +17,22 @@ public class Solution20240505 {
 
         Arrays.fill(coins, Integer.MAX_VALUE);
         // 初始化
+        // TODO: 2024/5/6 这里为什么从1 开始呢？
         for (int j=1; j<=amount; j++) {
             for (int i=0; i<coins.length; i++) {
-                if (j>=coins[i]) {
+                if (j>=coins[i] && dp[i-coins[j]]!=Integer.MAX_VALUE) {
                     dp[j] = Math.min(dp[j], dp[j-coins[i]]+1);
                 }
             }
+        }
+        if (dp[amount] == Integer.MAX_VALUE) {
+            return -1;
         }
         return dp[amount];
     }
 
     public static void main(String[] args) {
         Solution20240505 ss = new Solution20240505();
-        System.out.println(ss.coinChange(new int[]{1, 2, 5}, 11));
+        System.out.println(ss.coinChange(new int[]{2}, 3));
     }
 }

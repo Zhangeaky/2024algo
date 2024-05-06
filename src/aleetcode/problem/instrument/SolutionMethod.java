@@ -11,4 +11,9 @@ public @interface SolutionMethod {
 
     String description() default "";
     int number() default 0;
+
+    /**
+     * 方法的标识符 用于标记一道题目的一次解法
+     */
+    String value() default  "";
 }
