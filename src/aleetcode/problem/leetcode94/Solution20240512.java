@@ -17,21 +17,24 @@ public class Solution20240512 {
         List<Integer> resultList = new ArrayList<>();
         // 使用栈来记录节点的访问顺序
         Stack<TreeNode> stack = new Stack<>();
-        stack.push(root);
+        TreeNode current = root;
 
-        while (!stack.isEmpty()) {
-            TreeNode topNode = stack.peek();
-            // 左节点 如果不为空则入栈
-            if (topNode.left != null) {
-                stack.push(topNode.left);
+        // 循环退出的条件为什么是这个 要看下
+        while (current!=null || !stack.isEmpty()) {
+
+            // 左节点不为空，则一直遍历下去
+            if (current != null) {
+                stack.push(current);
+                current = current.left;
             } else {
-                // 左节点为空, 则需要处理当前节点了。
-                TreeNode poppedNode = stack.pop();
-                resultList.add(poppedNode.val);
-                // 并将当前节点的右节点入栈，因为接下来马上处理右节点了。
-
-
+                //左节点为空 则开始处理当前节点。栈顶的就是当前节点
+                current = stack.pop();
+                // 处理当前节点
+                resultList.add(current.val);
+                // 处理右节点
+                current = current.right;
             }
+
         }
 
         return resultList;
