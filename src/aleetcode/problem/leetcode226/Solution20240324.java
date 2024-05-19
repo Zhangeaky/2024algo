@@ -1,7 +1,6 @@
 package aleetcode.problem.leetcode226;
 
 import aleetcode.problem.leetcode94.TreeNode;
-import com.sun.scenario.effect.Brightpass;
 
 public class Solution20240324 {
 

@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import aleetcode.problem.instrument.Solution;
+import aleetcode.problem.instrument.SolutionMethod;
 import org.w3c.dom.ls.LSInput;
 
 /**
@@ -21,8 +22,7 @@ public class Solution20240508 {
 
     private Map<String, String> mapper = new HashMap<>();
 
-
-
+    @SolutionMethod("这个代码没有做出来")
     public List<String> generateParenthesis(int n) {
         mapper.put(")", "(");
 

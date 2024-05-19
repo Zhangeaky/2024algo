@@ -13,6 +13,7 @@ public class Solution20240515 {
     @SolutionMethod
     public int lengthOfLIS(int[] nums) {
 
+        return  0;
     }
 
 }
