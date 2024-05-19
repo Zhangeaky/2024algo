@@ -10,6 +10,8 @@ import java.lang.annotation.Target;
 public @interface SolutionMethod {
 
     String description() default "";
+
+
     int number() default 0;
 
     /**

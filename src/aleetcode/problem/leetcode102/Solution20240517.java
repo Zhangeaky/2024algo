@@ -7,7 +7,7 @@ import aleetcode.problem.leetcode94.TreeNode;
 import java.util.*;
 
 /**
- * https://leetcode.cn/problems/binary-tree-level-order-traversal/description/
+ * <a href="https://leetcode.cn/problems/binary-tree-level-order-traversal/description/">...</a>
  */
 @Solution
 public class Solution20240517 {

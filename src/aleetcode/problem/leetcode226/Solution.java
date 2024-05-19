@@ -1,5 +1,6 @@
 package aleetcode.problem.leetcode226;
 
+import aleetcode.problem.instrument.SolutionMethod;
 import aleetcode.problem.leetcode94.TreeNode;
 
 /**
@@ -17,7 +18,14 @@ import aleetcode.problem.leetcode94.TreeNode;
  *     }
  * }
  */
+
+/**
+ * <a href="https://leetcode.cn/problems/invert-binary-tree/description/">翻转二叉树</a>
+ */
+@aleetcode.problem.instrument.Solution(number = 226)
 class Solution {
+
+    @SolutionMethod
     public TreeNode invertTree(TreeNode root) {
 
         if (root == null) {
