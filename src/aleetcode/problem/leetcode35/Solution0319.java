@@ -1,5 +1,7 @@
 package aleetcode.problem.leetcode35;
 
+import aleetcode.problem.instrument.SolutionMethod;
+
 public class Solution0319 {
 
     public int searchInsert(int[] nums, int target) {
@@ -7,6 +9,7 @@ public class Solution0319 {
     }
 
 
+    @SolutionMethod(description = "解题失败")
     private int function(int[] nums, int i, int j, int target) {
 
         // 最大值

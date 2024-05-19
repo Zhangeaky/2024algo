@@ -1,7 +1,15 @@
 package aleetcode.problem.leetcode704;
 
+import aleetcode.problem.instrument.Solution;
+import aleetcode.problem.instrument.SolutionMethod;
+
+/**
+ * <a href="https://leetcode.cn/problems/binary-search/">二分查找</a>
+ */
+@Solution(number = 704)
 public class Solution20240320 {
 
+    @SolutionMethod
     public int search(int[] nums, int target) {
 
         if (nums == null) {
