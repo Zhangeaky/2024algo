@@ -11,7 +11,7 @@ public @interface Solution {
 
     int value() default 1;
 
-    int number() default 1;
+    int number();
 
     String name() default "";
 

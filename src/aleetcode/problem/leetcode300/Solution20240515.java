@@ -7,7 +7,7 @@ import aleetcode.problem.instrument.SolutionMethod;
  * <a href="https://leetcode.cn/problems/longest-increasing-subsequence/description/?envType=study-plan-v2&envId=top-100-liked">
  *     最长递增子序列</a>
  */
-@Solution
+@Solution(number = 300)
 public class Solution20240515 {
 
     @SolutionMethod
