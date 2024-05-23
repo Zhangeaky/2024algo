@@ -6,7 +6,7 @@ import aleetcode.problem.instrument.SolutionMethod;
 import java.util.ArrayList;
 import java.util.List;
 
-@Solution
+@Solution(number = 300)
 public class Solution20240510 {
 
     @SolutionMethod(description = "递归")

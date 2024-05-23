@@ -7,7 +7,7 @@ import aleetcode.problem.instrument.SolutionMethod;
  * <a href="https://leetcode.cn/problems/maximum-product-subarray/description/?envType=study-plan-v2&envId=top-100-liked">
  *     乘积最大子数组</a>
  */
-@Solution
+@Solution(number = 152)
 public class Solution20240506 {
 
     @SolutionMethod
