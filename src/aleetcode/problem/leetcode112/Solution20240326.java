@@ -1,10 +1,15 @@
 package aleetcode.problem.leetcode112;
 
+import aleetcode.problem.instrument.Solution;
 import aleetcode.problem.leetcode94.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * <a href="https://leetcode.cn/problems/path-sum/">路径总和</a>
+ */
+@Solution(number = 112)
 public class Solution20240326 {
 
     public static void main(String[] args) {

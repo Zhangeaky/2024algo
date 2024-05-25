@@ -15,6 +15,12 @@ import java.util.Queue;
 @Solution(number = 513)
 public class Solution20240523 {
 
+    @SolutionMethod("使用递归")
+    public int findBottomLeftValue_(TreeNode root) {
+
+        return 0;
+    }
+
     @SolutionMethod("层序遍历" + "空间复杂度和时间复杂度都很低")
     public int findBottomLeftValue(TreeNode root) {
         if (root == null) {
