@@ -7,6 +7,7 @@ import java.util.List;
 
 public class ZeroOneBag {
 
+
     @SolutionMethod("01")
     public int practice(int weight, int[] value, int[] weights) {
 

@@ -1,36 +1,29 @@
-package aleetcode.problem.leetcode106;
+package aleetcode.problem.leetcode105;
 
-import aleetcode.problem.instrument.Solution;
 import aleetcode.problem.instrument.SolutionMethod;
+import aleetcode.problem.leetcode106.Solution20240525;
 import aleetcode.problem.leetcode94.TreeNode;
 
 import java.util.Arrays;
 
-/**
- * <a href="https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/">
- *     从中序和后序遍历构造二叉树</a>
- */
-@Solution(number = 106)
-public class Solution20240525 {
-
+public class Solution20240526 {
     @SolutionMethod("")
-    public TreeNode buildTree(int[] inorder, int[] postorder) {
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
 
-        if (isEmpty(inorder) || isEmpty(postorder)) {
+        if (isEmpty(inorder) || isEmpty(preorder)) {
             return null;
         }
 
-
-
-        // 从后序遍历数组中获取子树的头节点 第一层递归对应的是整棵树的根节点
-        int headNode = postorder[postorder.length - 1];
+        // 从前序遍历数组中获取子树的头节点 第一层递归对应的是整棵树的根节点
+        int headNode = preorder[0];
         TreeNode head = new TreeNode(headNode);
 
         // TODO: 提前返回的逻辑
-        if (inorder.length == 1) {
+        if (preorder.length == 1) {
             return head;
         }
 
+        // 获取头节点在中序数组中的索引
         int index = getIndex(inorder, headNode);
 
         // 根据头结点 分割中序数组，将子树 切分为 左子树和右子树
@@ -40,14 +33,13 @@ public class Solution20240525 {
         System.out.println("右中序：" + Arrays.toString(rightOfInorderGroup));
 
         // 因为中序和后序遍历，他们的数组的排列结构相同，只是子树的排列不同。
-        int[] leftPostOrderGroup = getLeftOfPostOrder(postorder, leftInorderGroup);
-        System.out.println("左后序：" + Arrays.toString(leftPostOrderGroup));
-        int[] rightOfPostOrderGroup = getRightOfPostOrder(postorder, rightOfInorderGroup);
-        System.out.println("右后序：" + Arrays.toString(rightOfPostOrderGroup));
+        int[] leftPreOrderGroup = getLeftOfPreOrder(preorder, leftInorderGroup);
+        System.out.println("左后序：" + Arrays.toString(leftPreOrderGroup));
+        int[] rightOfPreOrderGroup = getRightOfPreOrder(preorder, rightOfInorderGroup);
+        System.out.println("右后序：" + Arrays.toString(rightOfPreOrderGroup));
 
-
-        head.left = buildTree(leftInorderGroup, leftPostOrderGroup);
-        head.right = buildTree(rightOfInorderGroup, rightOfPostOrderGroup);
+        head.left = buildTree(leftPreOrderGroup, leftInorderGroup);
+        head.right = buildTree(rightOfPreOrderGroup, rightOfInorderGroup);
 
         return head;
     }
@@ -84,19 +76,18 @@ public class Solution20240525 {
         return right;
     }
 
-    private int[] getLeftOfPostOrder(int[] preLevelPost, int[] currLevelInorder) {
+    private int[] getLeftOfPreOrder(int[] preLevelPre, int[] currLevelInorder) {
         int[] left = new int[currLevelInorder.length];
-
         for (int i=0; i<left.length; i++) {
-            left[i] = preLevelPost[i];
+            left[i] = preLevelPre[i+1];
         }
         return left;
     }
 
-    private int[] getRightOfPostOrder(int[] preLevelPost, int[] currLevelInorder) {
+    private int[] getRightOfPreOrder(int[] preLevel, int[] currLevelInorder) {
         int[] right = new int[currLevelInorder.length];
         for (int i=0; i<right.length; i++) {
-            right[i] = preLevelPost[preLevelPost.length-right.length-1+i];
+            right[i] = preLevel[preLevel.length-right.length+i];
         }
         return right;
     }
